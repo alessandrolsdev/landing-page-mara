@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.header nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.header nav a:hover {
+  color: var(--primary-color);
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3; /* Um azul um pouco mais escuro */
+}
+/* Para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+  .header nav ul {
+    display: none; /* Esconda o menu principal em telas pequenas */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Você precisará de JavaScript para criar um menu hambúrguer */
+}

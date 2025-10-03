@@ -1,0 +1,22 @@
+/* Definindo variáveis de cor para facilitar a manutenção */
+:root {
+  --primary-color: #007bff; /* Azul principal */
+  --secondary-color: #f8f9fa; /* Fundo claro */
+  --text-color: #333;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif; /* Use uma fonte limpa como Poppins ou Lato */
+}
+
+html {
+  scroll-behavior: smooth; /* Para navegação suave ao clicar nos links do menu */
+}
+
+body {
+  color: var(--text-color);
+}
