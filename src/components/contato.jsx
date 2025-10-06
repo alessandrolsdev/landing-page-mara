@@ -7,13 +7,13 @@ function Contato() {
       <h2>Entre em Contato</h2>
       <p className="contact-subtitle">Agende sua avaliação ou tire suas dúvidas. Estamos prontos para atender você!</p>
       <div className="contact-container">
-        <div className="contact-info">
+        <div className="contact-info" data-aos="fade-up" data-aos-delay="200">
           <h3>Informações de Contato</h3>
           <p><strong>📍 Endereço:</strong><br/> Rua das Flores, 123, Sala 45<br/> Bairro Centro, São Paulo - SP</p>
-          <p><strong>📞 Telefone / WhatsApp:</strong><br/> (11) 99999-8888</p>
-          <p><strong>📧 Email:</strong><br/> contato@drajoana.com.br</p>
+          <p><strong>📞 Telefone / WhatsApp:</strong><br/> (38) 98407-8448</p>
+          <p><strong>📧 Email:</strong><br/> contato@dramara.com.br</p>
         </div>
-        <form className="contact-form">
+        <form className="contact-form" data-aos="fade-up" data-aos-delay="400">
           <h3>Envie uma Mensagem</h3>
           <input type="text" placeholder="Seu Nome" required />
           <input type="email" placeholder="Seu Email" required />

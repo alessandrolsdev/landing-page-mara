@@ -1,24 +1,25 @@
 import React from 'react';
 import './Sobre.css';
-// Lembre-se de colocar uma imagem da dentista na pasta 'src/assets'
-// import fotoDentista from '../assets/foto-dentista.jpg'; 
 
 function Sobre() {
   return (
     <section id="sobre" className="about-section">
       <div className="about-container">
-        <div className="about-image">
-          {/* <img src={fotoDentista} alt="Dra. Joana Silva" /> */}
-          <div className="image-placeholder"></div> {/* Use isso como placeholder se não tiver a imagem */}
+        <div className="about-image" data-aos="fade-right">
+          { <img src="/src/assets/mara.jpeg" alt="Dra. Mara" /> }
         </div>
-        <div className="about-content">
-          <h2>Sobre a Dra. Joana Silva</h2>
+        <div className="about-content" data-aos="fade-left">
+          <h2>Sobre a Dra. Mara Luísa</h2>
           <p>
-            Com mais de 15 anos de experiência, a Dra. Joana é apaixonada por transformar sorrisos e melhorar a qualidade de vida de seus pacientes. Formada pela Universidade de São Paulo (USP), possui especialização em Implantodontia e Estética Dental.
+            Sou Mara Luísa Carvalho, cirurgiã-dentista com dedicação especial à Odontopediatria, área que me encanta por unir técnica, cuidado e afeto. Minha missão é transformar a experiência no consultório em um momento leve e acolhedor, ajudando a construir desde cedo uma relação saudável das crianças com a saúde bucal.
+
           </p>
           <p>
-            Nossa clínica utiliza tecnologia de ponta para garantir diagnósticos precisos e tratamentos confortáveis, sempre com um atendimento humanizado e focado nas suas necessidades individuais.
+            Acredito que cada sorriso tem uma história única, e por isso busco oferecer um atendimento individualizado, baseado em conhecimento científico atualizado, prevenção e respeito às necessidades de cada paciente e família.
           </p>
+          <p>
+            Mais do que cuidar de dentes, meu propósito é promover confiança, bem-estar e saúde para que cada sorriso possa crescer forte e feliz.
+          </p>  
         </div>
       </div>
     </section>

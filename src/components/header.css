@@ -16,20 +16,21 @@
   color: var(--primary-color);
 }
 
-.header nav ul {
+.nav-desktop ul {
   list-style: none;
   display: flex;
   gap: 2rem;
+  margin: 0;
 }
 
-.header nav a {
+.nav-desktop a {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-.header nav a:hover {
+.nav-desktop a:hover {
   color: var(--primary-color);
 }
 
@@ -37,26 +38,106 @@
   padding: 0.75rem 1.5rem;
   background-color: var(--primary-color);
   color: var(--white);
-  border: none;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: none;
 }
 
 .cta-button:hover {
-  background-color: #0056b3; /* Um azul um pouco mais escuro */
+  background-color: #0056b3;
 }
-/* Para telas menores que 768px (tablets e celulares) */
-@media (max-width: 768px) {
-  .header nav ul {
-    display: none; /* Esconda o menu principal em telas pequenas */
-  }
 
-  .hero-content h1 {
-    font-size: 2.5rem;
+.botao-hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001; /* Garante que ele fique acima de outros elementos */
+}
+
+.botao-hamburguer .linha {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  border-radius: 2px;
+}
+
+/* --- ESTILOS DO MENU MOBILE (A PARTE IMPORTANTE) --- */
+
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  max-width: 300px; /* Limite para telas maiores */
+  height: 100vh;
+  background-color: var(--white);
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* PONTO CHAVE 1: O menu começa escondido fora da tela para a direita */
+  transform: translateX(100%);
+  
+  /* PONTO CHAVE 2: Uma transição suave para a animação */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* PONTO CHAVE 3: Quando a classe 'aberto' é adicionada, o menu desliza para dentro da tela */
+.nav-mobile.aberto {
+  transform: translateX(0);
+}
+
+
+.nav-mobile ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-mobile li {
+  margin-bottom: 2rem;
+}
+
+.nav-mobile a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.botao-fechar {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.cta-button-mobile {
+    background: var(--primary-color);
+    color: white !important; /* !important para garantir a cor */
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+/* --- MEDIA QUERY --- */
+@media (max-width: 768px) {
+  .nav-desktop, .cta-desktop {
+    display: none;
   }
   
-  /* Você precisará de JavaScript para criar um menu hambúrguer */
+  .botao-hamburguer {
+    display: flex;
+  }
 }
