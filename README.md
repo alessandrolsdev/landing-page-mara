@@ -29,8 +29,6 @@ Este projeto foi criado como uma solução completa de front-end para a **Vitta 
 
 ![Prévia da Landing Page da Vitta Clinic](./public/preview.png)
 
-*(Aqui você vai colocar uma captura de tela do seu projeto finalizado)*
-
 ---
 
 ## ✨ Funcionalidades
