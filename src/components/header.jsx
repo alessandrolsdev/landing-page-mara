@@ -1,74 +1,76 @@
-// 1. Importamos o 'useState' do React para guardar o estado do menu (aberto/fechado)
 import React, { useState } from 'react';
 import './Header.css';
+import logoIcon from '../assets/logo-icon.png';
+
+// NOVIDADE: Importando os ícones do Instagram e WhatsApp
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 function Header() {
-  // 2. Criamos o estado. 'menuAberto' guarda o valor (true/false), e 'setMenuAberto' é a função para trocar esse valor.
   const [menuAberto, setMenuAberto] = useState(false);
 
-  // Função para fechar o menu quando um link for clicado (melhora a experiência no mobile)
   const handleLinkClick = () => {
     setMenuAberto(false);
   };
-console.log('Estado atual do menu:', menuAberto);
-  return (
-    <header className="header">
-      <div className="logo">Dra. Mara</div>
 
-      {/* --- MENU PARA DESKTOP --- */}
-      {/* Este é o menu que já tínhamos. Adicionamos a classe 'nav-desktop' */}
+  return (
+    // REMOVEMOS A BARRA PRETA QUE FICAVA AQUI EM CIMA
+    <header className="header">
+      <div className="logo">
+        <img src={logoIcon} alt="Ícone da Vitta Clinic" />
+        <span>Vitta Clinic</span>
+      </div>
+
       <nav className="nav-desktop">
         <ul>
-          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#inicio">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Tratamentos</a></li>
+          <li><a href="#espaco">Nosso Espaço</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
+      
+      {/* NOVIDADE: Adicionamos os ícones sociais aqui no header principal */}
+      <div className="header-social-icons">
+        <a href="https://instagram.com/SEU_USUARIO" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <FaInstagram />
+        </a>
+        <a href="https://wa.me/55NUMERO" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <FaWhatsapp />
+        </a>
+      </div>
+      
+      <a href="https://wa.me/55NUMERO" target="_blank" className="cta-button cta-desktop">
+        Agende sua Consulta
+      </a>
 
-      {/* --- BOTÃO HAMBÚRGUER (só aparece no mobile) --- */}
-      {/* Este botão usa o onClick para inverter o estado 'menuAberto' */}
       <button 
-        className="botao-hamburguer" 
+        className={`botao-hamburguer ${menuAberto ? 'aberto' : ''}`} 
         onClick={() => setMenuAberto(!menuAberto)}
+        aria-label="Abrir menu"
       >
-        {/* Este é o ícone do hambúrguer, feito com divs */}
         <div className="linha"></div>
         <div className="linha"></div>
         <div className="linha"></div>
       </button>
 
-      {/* --- MENU MOBILE --- */}
-      {/* Este menu só será exibido na tela se 'menuAberto' for true */}
-      {menuAberto && (
-         <nav className={menuAberto ? "nav-mobile aberto" : "nav-mobile"}>
-        <button 
-          className="botao-fechar" 
-          onClick={() => setMenuAberto(false)}
-        >
-          X
-        </button>
+      {/* O menu mobile continua igual, pois já tem o botão de WhatsApp */}
+      <nav className={menuAberto ? "nav-mobile aberto" : "nav-mobile"}>
         <ul>
-          <li><a href="#servicos" onClick={handleLinkClick}>Serviços</a></li>
+          <li><a href="#inicio" onClick={handleLinkClick}>Início</a></li>
           <li><a href="#sobre" onClick={handleLinkClick}>Sobre</a></li>
+          <li><a href="#servicos" onClick={handleLinkClick}>Tratamentos</a></li>
+          <li><a href="#espaco" onClick={handleLinkClick}>Nosso Espaço</a></li>
+          <li><a href="#depoimentos" onClick={handleLinkClick}>Depoimentos</a></li>
           <li><a href="#contato" onClick={handleLinkClick}>Contato</a></li>
           <li>
-              <a 
-                  href="https://wa.me/55NUMEROAQUI" 
-                  target="_blank" 
-                  className="cta-button-mobile"
-                  onClick={handleLinkClick}
-              >
-                  Agende sua Consulta
-              </a>
+            <a href="https://wa.me/55NUMERO" target="_blank" className="cta-button-mobile" onClick={handleLinkClick}>
+              Agende no WhatsApp
+            </a>
           </li>
         </ul>
       </nav>
-      )}
-
-      {/* O botão CTA principal do header, que agora será escondido no mobile */}
-      <a href="https://wa.me/55NUMEROAQUI" target="_blank" className="cta-button cta-desktop">
-        Agende sua Consulta
-      </a>
     </header>
   );
 }

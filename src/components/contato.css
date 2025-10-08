@@ -1,62 +1,80 @@
 .contact-section {
-  padding: 4rem 5%;
-  text-align: center;
-  background-color: var(--secondary-color);
+  padding: 4rem 0;
 }
 
-.contact-section h2 {
+.contact-wrapper {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-form-container {
+  flex: 1;
+  padding: 3rem 5%;
+}
+
+.contact-form-container h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.contact-subtitle {
-  max-width: 600px;
-  margin: 0 auto 3rem auto;
+.contact-form-container p {
   font-size: 1.1rem;
-}
-
-.contact-container {
-  display: flex;
-  gap: 3rem;
-  text-align: left;
-}
-
-.contact-info, .contact-form {
-  flex: 1;
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.contact-info h3, .contact-form h3 {
-  font-size: 1.8rem;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-}
-
-.contact-info p {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .contact-form input, .contact-form textarea {
   width: 100%;
-  padding: 0.8rem;
+  padding: 1rem;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secondary-color);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: 2px solid var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .contact-form button {
   width: 100%;
   border: none;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+/* --- MUDANÇA PRINCIPAL AQUI --- */
+.contact-map-container {
+  flex: 1;
+  min-height: 500px;
+  
+  /* NOVIDADE: Transformamos a 'caixa' do mapa em um container flex vertical */
+  display: flex;
+  flex-direction: column; 
+}
+
+/* NOVIDADE: E agora ordenamos que o iframe cresça para preencher o espaço */
+.contact-map-container iframe {
+  width: 100%;
+  flex-grow: 1; /* <-- ESTA É A ORDEM PARA ELE ESTICAR VERTICALMENTE */
+  border: none;
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column-reverse; 
+  }
+
+  .contact-map-container {
+    min-height: 350px; 
+    flex-grow: 0;
+  }
+
+  .contact-form-container {
+    padding: 3rem 1.5rem; 
   }
 }

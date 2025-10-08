@@ -1,8 +1,10 @@
 /* Definindo variáveis de cor para facilitar a manutenção */
+/* src/index.css */
 :root {
-  --primary-color: #007bff; /* Azul principal */
-  --secondary-color: #f8f9fa; /* Fundo claro */
-  --text-color: #333;
+  --primary-color: #c9a455; /* Dourado principal da logo */
+  --secondary-color: #f7f3ed; /* Um bege/creme bem claro para fundos */
+  --dark-color: #2c2a2a; /* Um cinza-escuro/chumbo para textos e fundos */
+  --text-color: #4f4f4f; /* Cor de texto principal, mais suave que preto puro */
   --white: #fff;
 }
 

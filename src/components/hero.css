@@ -1,8 +1,16 @@
-.hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/path-to-your-image.jpg'); /* Coloque o caminho de uma boa imagem */
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
+.hero-section {
+  /* PONTO CHAVE 1: O Filtro (Overlay) + a Imagem de Fundo */
+  /* Criamos um gradiente preto semi-transparente que fica por cima da imagem */
+  background-image: 
+    linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)), 
+    url('../assets/hero-background2.png'); /* O caminho para a sua imagem */
+
+  /* PONTO CHAVE 2: Propriedades para a imagem preencher a tela toda */
+  height: 90vh; /* Ocupa 90% da altura da tela */
+  background-size: cover; /* Garante que a imagem cubra tudo sem distorcer */
+  background-position: center center; /* Mantém a imagem sempre centralizada */
+  
+  /* Usamos flexbox para centralizar o conteúdo de texto */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,12 +18,48 @@
   color: var(--white);
 }
 
+.hero-content {
+  max-width: 800px; /* Largura máxima do texto */
+  padding: 0 1rem;
+}
+
 .hero-content h1 {
   font-size: 3.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+  /* Uma sombra sutil no texto para ajudar ainda mais na leitura */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-button {
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+  /* Efeito de transição suave no botão */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: scale(1.05); /* Aumenta um pouco de tamanho ao passar o mouse */
+}
+
+
+/* --- Responsividade para Celulares --- */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh; /* Altura um pouco menor no mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
 }

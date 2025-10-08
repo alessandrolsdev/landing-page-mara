@@ -13,12 +13,14 @@ function Sobre() {
           <p>
             Sou Mara Luísa Carvalho, cirurgiã-dentista com dedicação especial à Odontopediatria, área que me encanta por unir técnica, cuidado e afeto. Minha missão é transformar a experiência no consultório em um momento leve e acolhedor, ajudando a construir desde cedo uma relação saudável das crianças com a saúde bucal.
 
+
           </p>
           <p>
             Acredito que cada sorriso tem uma história única, e por isso busco oferecer um atendimento individualizado, baseado em conhecimento científico atualizado, prevenção e respeito às necessidades de cada paciente e família.
+
           </p>
           <p>
-            Mais do que cuidar de dentes, meu propósito é promover confiança, bem-estar e saúde para que cada sorriso possa crescer forte e feliz.
+            Mais do que cuidar de dentes, meu propósito é promover confiança, bem-estar e saúde para que cada sorriso possa crescer forte e feliz.
           </p>  
         </div>
       </div>
