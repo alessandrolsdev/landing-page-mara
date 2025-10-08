@@ -1,14 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import 'aos/dist/aos.css' 
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+
+// Importação dos arquivos de estilo globais e de bibliotecas
+import './index.css';
+import 'aos/dist/aos.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import './index.css'
-import App from './App.jsx'
 
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+// Renderiza o componente principal <App> na div #root do index.html
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>,
-)
+  </React.StrictMode>,
+);

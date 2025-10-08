@@ -1,25 +1,32 @@
 import React, { useState } from 'react';
 import './Header.css';
 import logoIcon from '../assets/logo-icon.png';
-
-// NOVIDADE: Importando os ícones do Instagram e WhatsApp
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
+/**
+ * Renderiza o cabeçalho do site.
+ * Inclui o logo, navegação principal (desktop e mobile) e ícones de redes sociais.
+ */
 function Header() {
+  // Estado para controlar a visibilidade do menu mobile (aberto/fechado).
   const [menuAberto, setMenuAberto] = useState(false);
 
+  /**
+   * Função para fechar o menu mobile.
+   * Usada nos links do menu para melhorar a experiência do usuário.
+   */
   const handleLinkClick = () => {
     setMenuAberto(false);
   };
 
   return (
-    // REMOVEMOS A BARRA PRETA QUE FICAVA AQUI EM CIMA
     <header className="header">
       <div className="logo">
         <img src={logoIcon} alt="Ícone da Vitta Clinic" />
         <span>Vitta Clinic</span>
       </div>
 
+      {/*-- Navegação para telas grandes --*/}
       <nav className="nav-desktop">
         <ul>
           <li><a href="#inicio">Início</a></li>
@@ -31,7 +38,6 @@ function Header() {
         </ul>
       </nav>
       
-      {/* NOVIDADE: Adicionamos os ícones sociais aqui no header principal */}
       <div className="header-social-icons">
         <a href="https://instagram.com/SEU_USUARIO" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <FaInstagram />
@@ -45,6 +51,7 @@ function Header() {
         Agende sua Consulta
       </a>
 
+      {/*-- Botão que controla a abertura e fechamento do menu mobile --*/}
       <button 
         className={`botao-hamburguer ${menuAberto ? 'aberto' : ''}`} 
         onClick={() => setMenuAberto(!menuAberto)}
@@ -55,7 +62,7 @@ function Header() {
         <div className="linha"></div>
       </button>
 
-      {/* O menu mobile continua igual, pois já tem o botão de WhatsApp */}
+      {/*-- Navegação para telas pequenas (menu lateral) --*/}
       <nav className={menuAberto ? "nav-mobile aberto" : "nav-mobile"}>
         <ul>
           <li><a href="#inicio" onClick={handleLinkClick}>Início</a></li>

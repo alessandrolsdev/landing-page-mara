@@ -1,13 +1,18 @@
+/* ==========================================================================
+   ESTILOS DA SEÇÃO DE CONTATO
+   ========================================================================== */
 .contact-section {
   padding: 4rem 0;
 }
 
+/* Wrapper principal que organiza o layout em duas colunas */
 .contact-wrapper {
   display: flex;
   max-width: 1400px;
   margin: 0 auto;
 }
 
+/* Coluna do formulário */
 .contact-form-container {
   flex: 1;
   padding: 3rem 5%;
@@ -46,25 +51,27 @@
   padding: 1rem;
 }
 
-/* --- MUDANÇA PRINCIPAL AQUI --- */
+/* Coluna do mapa */
 .contact-map-container {
   flex: 1;
   min-height: 500px;
-  
-  /* NOVIDADE: Transformamos a 'caixa' do mapa em um container flex vertical */
+  /* Transforma o container em flex para forçar o iframe a crescer */
   display: flex;
   flex-direction: column; 
 }
 
-/* NOVIDADE: E agora ordenamos que o iframe cresça para preencher o espaço */
+/* Regra que força o iframe a ocupar todo o espaço do seu container pai */
 .contact-map-container iframe {
   width: 100%;
-  flex-grow: 1; /* <-- ESTA É A ORDEM PARA ELE ESTICAR VERTICALMENTE */
+  flex-grow: 1; /* Força o crescimento vertical */
   border: none;
 }
 
-/* Responsividade */
+/* ==========================================================================
+   RESPONSIVIDADE DA SEÇÃO DE CONTATO
+   ========================================================================== */
 @media (max-width: 900px) {
+  /* Empilha as colunas e inverte a ordem (formulário primeiro) */
   .contact-wrapper {
     flex-direction: column-reverse; 
   }

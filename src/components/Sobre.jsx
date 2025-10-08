@@ -1,12 +1,17 @@
 import React from 'react';
 import './Sobre.css';
 
+/**
+ * Renderiza a seção "Sobre".
+ * Apresenta uma foto e uma biografia da profissional responsável.
+ */
+
 function Sobre() {
   return (
     <section id="sobre" className="about-section">
       <div className="about-container">
         <div className="about-image" data-aos="fade-right">
-          { <img src="/src/assets/mara.jpeg" alt="Dra. Mara" /> }
+          { <img src="/src/assets/mara.jpeg" alt="Dra. Mara" /> } {/* Imagem da Dra. Mara Luísa */}
         </div>
         <div className="about-content" data-aos="fade-left">
           <h2>Sobre a Dra. Mara Luísa</h2>

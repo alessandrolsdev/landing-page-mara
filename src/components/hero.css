@@ -1,16 +1,17 @@
+/* ==========================================================================
+   ESTILOS DA SEÇÃO HERO
+   ========================================================================== */
 .hero-section {
-  /* PONTO CHAVE 1: O Filtro (Overlay) + a Imagem de Fundo */
-  /* Criamos um gradiente preto semi-transparente que fica por cima da imagem */
+  /* O overlay (gradiente escuro) é crucial para garantir a legibilidade do texto sobre a imagem. */
   background-image: 
     linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)), 
-    url('../assets/hero-background2.png'); /* O caminho para a sua imagem */
+    url('../assets/hero-background.jpg');
 
-  /* PONTO CHAVE 2: Propriedades para a imagem preencher a tela toda */
-  height: 90vh; /* Ocupa 90% da altura da tela */
-  background-size: cover; /* Garante que a imagem cubra tudo sem distorcer */
-  background-position: center center; /* Mantém a imagem sempre centralizada */
+  height: 90vh;
+  background-size: cover;
+  background-position: center center;
   
-  /* Usamos flexbox para centralizar o conteúdo de texto */
+  /* Centraliza o conteúdo de texto vertical e horizontalmente. */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +20,7 @@
 }
 
 .hero-content {
-  max-width: 800px; /* Largura máxima do texto */
+  max-width: 800px;
   padding: 0 1rem;
 }
 
@@ -27,7 +28,7 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  /* Uma sombra sutil no texto para ajudar ainda mais na leitura */
+  /* Sombra no texto para melhorar o contraste com o fundo. */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -40,19 +41,19 @@
 .hero-button {
   font-size: 1.1rem;
   padding: 1rem 2.5rem;
-  /* Efeito de transição suave no botão */
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .hero-button:hover {
-  transform: scale(1.05); /* Aumenta um pouco de tamanho ao passar o mouse */
+  transform: scale(1.05); /* Efeito de crescimento sutil. */
 }
 
-
-/* --- Responsividade para Celulares --- */
+/* ==========================================================================
+   RESPONSIVIDADE DO HERO
+   ========================================================================== */
 @media (max-width: 768px) {
   .hero-section {
-    height: 80vh; /* Altura um pouco menor no mobile */
+    height: 80vh;
   }
 
   .hero-content h1 {

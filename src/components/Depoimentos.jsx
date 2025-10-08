@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import './Depoimentos.css';
 
+// Array com os dados para os slides de depoimentos.
 const testimonials = [
     {
         text: "Atendimento incrível e super profissional! A Dra. Mara me deixou muito à vontade e o resultado ficou perfeito. Recomendo de olhos fechados!",
@@ -17,7 +18,12 @@ const testimonials = [
     }
 ];
 
+/**
+ * Renderiza a seção "Depoimentos".
+ * Exibe feedbacks de pacientes em um formato de carrossel.
+ */
 function Depoimentos() {
+    // Objeto de configuração para o carrossel.
     const settings = {
         dots: true,
         infinite: true,

@@ -1,6 +1,11 @@
 import React from 'react';
 import './Footer.css';
 
+/**
+ * Renderiza o rodapé do site.
+ * Contém links para redes sociais e informações de copyright.
+ */
+
 function Footer() {
   return (
     <footer className="footer">

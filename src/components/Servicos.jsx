@@ -1,7 +1,7 @@
 import React from 'react';
 import './Servicos.css';
 
-// Lista de serviços para ser mais fácil de gerenciar
+// Array com os dados para os cards de serviços oferecidos.
 const servicesList = [
   {
     icon: '🦷',
@@ -11,12 +11,12 @@ const servicesList = [
   {
     icon: '🔩',
     title: 'Implantes Dentários',
-    description: 'Recupere a função e a estética do seu sorriso com implantes de titânio de alta qualidade.'
+    description: 'Recupere a função e a estética do seu sorriso com implantes de alta qualidade.'
   },
   {
     icon: '😁',
     title: 'Lentes de Contato',
-    description: 'Transforme seu sorriso com facetas de porcelana finas que corrigem cor, formato e tamanho.'
+    description: 'Transforme seu sorriso com facetas de porcelana que corrigem cor, formato e tamanho.'
   },
   {
     icon: '🔧',
@@ -25,11 +25,16 @@ const servicesList = [
   }
 ];
 
+/**
+ * Renderiza a seção "Tratamentos".
+ * Exibe uma grade de cards com os principais serviços da clínica.
+ */
 function Servicos() {
   return (
     <section id="servicos" className="services-section">
-      <h2>Nossos Serviços</h2>
+      <h2>Tratamentos</h2>
       <div className="services-grid">
+        {/* Mapeia o array 'servicesList' para renderizar um card para cada serviço */}
         {servicesList.map((service, index) => (
           <div className="service-card" key={index} data-aos="fade-up">
             <div className="service-icon">{service.icon}</div>

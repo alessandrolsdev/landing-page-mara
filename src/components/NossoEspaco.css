@@ -1,6 +1,9 @@
+/* ==========================================================================
+   ESTILOS DA SEÇÃO NOSSO ESPAÇO
+   ========================================================================== */
 .space-section {
   padding: 4rem 5%;
-  background-color: var(--secondary-color);
+  background-color: var(--white); /* Fundo branco para alternar com a seção anterior */
   text-align: center;
 }
 
@@ -24,13 +27,15 @@
 .carousel-image {
   width: 100%;
   border-radius: 10px;
-  /* Garante que a imagem mantenha suas proporções e não fique esmagada */
   object-fit: cover; 
-  max-height: 500px; /* Define uma altura máxima para o carrossel */
-  margin: 0 auto; /* Centraliza a imagem se ela for menor que o container */
+  max-height: 500px;
+  margin: 0 auto;
 }
 
-/* Estilizando as setas e bolinhas do carrossel para combinar com a paleta */
+/* ==========================================================================
+   CUSTOMIZAÇÃO DO CARROSSEL (REACT-SLICK)
+   ========================================================================== */
+/* Estiliza as bolinhas de navegação para combinar com a paleta de cores */
 .slick-dots li button:before {
   font-size: 12px;
   color: var(--primary-color);
@@ -41,6 +46,7 @@
     color: var(--primary-color);
 }
 
+/* Estiliza as setas de navegação */
 .slick-prev:before, .slick-next:before {
   font-size: 25px;
   color: var(--primary-color);

@@ -1,4 +1,31 @@
-/* === HEADER PRINCIPAL === */
+/* ==========================================================================
+   1. ESTILOS DA BARRA DO TOPO (TOP BAR)
+   ========================================================================== */
+.top-bar {
+  background-color: var(--dark-color);
+  color: var(--white);
+  padding: 0.5rem 5%;
+  font-size: 0.9rem;
+}
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.top-bar span { font-weight: 600; }
+.social-icons a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover { color: var(--primary-color); }
+
+/* ==========================================================================
+   2. ESTILOS DO HEADER PRINCIPAL
+   ========================================================================== */
 .header {
   display: flex;
   align-items: center;
@@ -17,6 +44,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  /* Empurra os outros elementos do header para a direita. */
   margin-right: auto; 
 }
 
@@ -24,7 +52,9 @@
   height: 35px;
 }
 
-/* === MENU DESKTOP === */
+/* ==========================================================================
+   3. ESTILOS DA NAVEGAÇÃO (DESKTOP)
+   ========================================================================== */
 .nav-desktop {
   margin-right: 2rem;
 }
@@ -42,14 +72,13 @@
 }
 .nav-desktop a:hover { color: var(--primary-color); }
 
-/* === ÍCONES SOCIAIS NO HEADER === */
+/* Ícones sociais que aparecem no header em telas grandes */
 .header-social-icons {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   margin-right: 2rem;
 }
-
 .header-social-icons a {
   color: var(--text-color);
   font-size: 1.5rem;
@@ -57,125 +86,5 @@
   align-items: center;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-
 .header-social-icons a:hover {
   color: var(--primary-color);
-  transform: scale(1.1);
-}
-
-.cta-button {
-  padding: 0.75rem 1.5rem;
-  background-color: var(--primary-color);
-  color: var(--white);
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: none;
-  white-space: nowrap;
-}
-.cta-button:hover { background-color: #a18241; }
-
-
-/* ======================================================= */
-/* === MENU HAMBÚRGUER E MOBILE === */
-/* ======================================================= */
-
-/* ESTA É A REGRA CHAVE PARA TELAS GRANDES */
-.botao-hamburguer {
-  display: none; /* POR PADRÃO, ELE É INVISÍVEL */
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 3000;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 25px;
-  height: 21px;
-}
-
-.botao-hamburguer .linha {
-  width: 25px;
-  height: 3px;
-  background-color: var(--text-color);
-  border-radius: 2px;
-  transition: all 0.3s ease-in-out;
-  transform-origin: center;
-}
-.botao-hamburguer.aberto .linha {
-  background-color: var(--white);
-}
-.botao-hamburguer.aberto .linha:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.botao-hamburguer.aberto .linha:nth-child(2) { opacity: 0; }
-.botao-hamburguer.aberto .linha:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-.nav-mobile {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 80%;
-  max-width: 350px;
-  height: 100%;
-  background-color: var(--dark-color);
-  box-shadow: -5px 0 15px rgba(0,0,0,0.25);
-  z-index: 2000;
-  transition: right 0.4s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem 1rem;
-}
-.nav-mobile.aberto { right: 0; }
-.nav-mobile ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-.nav-mobile li {
-  margin-bottom: 1rem;
-}
-.nav-mobile a {
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-  color: var(--white);
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: center;
-  border: 1px solid #555;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.nav-mobile a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--primary-color);
-}
-.cta-button-mobile {
-  width: 100%;
-  margin-top: 1.5rem;
-  background-color: var(--primary-color);
-  color: var(--dark-color) !important;
-  font-weight: bold !important;
-  border-color: var(--primary-color);
-}
-.cta-button-mobile:hover {
-  background-color: #a18241;
-  color: var(--dark-color) !important;
-  border-color: #a18241;
-}
-.botao-fechar { display: none; }
-
-/* === RESPONSIVIDADE (AQUI A MÁGICA ACONTECE) === */
-@media (max-width: 900px) {
-  /* Escondemos os itens do desktop */
-  .nav-desktop, .cta-desktop, .header-social-icons {
-    display: none;
-  }
-  
-  /* E mostramos o botão hambúrguer */
-  .botao-hamburguer {
-    display: flex; /* SÓ AQUI ELE SE TORNA VISÍVEL */
-  }
-}

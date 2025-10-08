@@ -1,12 +1,16 @@
+/* ==========================================================================
+   ESTILOS DA SEÇÃO DE DEPOIMENTOS
+   ========================================================================== */
 .testimonials-section {
     padding: 4rem 5%;
-    background-color: var(--white);
+    background-color: var(--secondary-color); /* Fundo creme para alternar */
     text-align: center;
 }
 
 .testimonials-section h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    color: var(--dark-color);
 }
 
 .testimonials-container {
