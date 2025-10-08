@@ -39,15 +39,15 @@ function Header() {
       </nav>
       
       <div className="header-social-icons">
-        <a href="https://instagram.com/SEU_USUARIO" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <a href="https://www.instagram.com/mara_carvalh_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <FaInstagram />
         </a>
-        <a href="https://wa.me/55NUMERO" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <a href="https://wa.me/5538984078448" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
           <FaWhatsapp />
         </a>
       </div>
       
-      <a href="https://wa.me/55NUMERO" target="_blank" className="cta-button cta-desktop">
+      <a href="https://wa.me/5538984078448" target="_blank" className="cta-button cta-desktop">
         Agende sua Consulta
       </a>
 
@@ -72,7 +72,7 @@ function Header() {
           <li><a href="#depoimentos" onClick={handleLinkClick}>Depoimentos</a></li>
           <li><a href="#contato" onClick={handleLinkClick}>Contato</a></li>
           <li>
-            <a href="https://wa.me/55NUMERO" target="_blank" className="cta-button-mobile" onClick={handleLinkClick}>
+            <a href="https://wa.me/5538984078448" target="_blank" className="cta-button-mobile" onClick={handleLinkClick}>
               Agende no WhatsApp
             </a>
           </li>

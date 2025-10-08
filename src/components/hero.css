@@ -5,7 +5,7 @@
   /* O overlay (gradiente escuro) é crucial para garantir a legibilidade do texto sobre a imagem. */
   background-image: 
     linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)), 
-    url('../assets/hero-background.jpg');
+    url('../assets/hero-background2.png');
 
   height: 90vh;
   background-size: cover;
