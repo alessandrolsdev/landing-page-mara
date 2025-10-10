@@ -4,7 +4,7 @@
 
 Uma landing page moderna e totalmente responsiva para uma clínica odontológica, com foco em odontopediatria. O projeto foi desenvolvido com React e Vite, seguindo as melhores práticas de componentização e experiência do usuário.
 
-**➡️ [Acesse a demonstração ao vivo aqui!](https://LINK_DO_SEU_SITE_NO_AR_AQUI)**
+**➡️ [Acesse a demonstração ao vivo aqui!](https://vitta-clinic.vercel.app/)**
 
 ---
 
@@ -62,4 +62,4 @@ Para rodar este projeto localmente, siga os passos abaixo:
 
 1. **Clone o repositório**
    ```bash
-   git clone [https://github.com/SEU_USUARIO/NOME_DO_SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_SEU_REPOSITORIO.git)
+   git clone [https://github.com/AlessandroLima25/LANDING-PAGE-MARA.git](https://github.com/AlessandroLima25/LANDING-PAGE-MARA.git)
