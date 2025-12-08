@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from 'react-slick';
-import './Depoimentos.css';
 
 // Array com os dados para os slides de depoimentos.
 const testimonials = [
@@ -34,14 +33,17 @@ function Depoimentos() {
     };
 
     return (
-        <section id="depoimentos" className="testimonials-section">
-            <h2>O que nossos pacientes dizem</h2>
-            <div className="testimonials-container" data-aos="fade-up">
+        <section id="depoimentos" className="py-16 px-[5%] bg-secondary text-center">
+            <h2 className="text-[2.5rem] mb-12 text-dark font-bold">O que nossos pacientes dizem</h2>
+            <div
+                className="max-w-[700px] mx-auto [&_.slick-dots_li_button:before]:text-primary [&_.slick-dots_li.slick-active_button:before]:opacity-100 [&_.slick-prev:before]:text-primary [&_.slick-prev:before]:text-[25px] [&_.slick-next:before]:text-primary [&_.slick-next:before]:text-[25px]"
+                data-aos="fade-up"
+            >
                 <Slider {...settings}>
                     {testimonials.map((testimonial, index) => (
-                        <div key={index} className="testimonial-card">
-                            <p className="testimonial-text">"{testimonial.text}"</p>
-                            <span className="testimonial-author">- {testimonial.author}</span>
+                        <div key={index} className="p-8 outline-none">
+                            <p className="text-[1.2rem] italic leading-[1.6] mb-6 text-text-color">"{testimonial.text}"</p>
+                            <span className="font-bold text-primary">- {testimonial.author}</span>
                         </div>
                     ))}
                 </Slider>

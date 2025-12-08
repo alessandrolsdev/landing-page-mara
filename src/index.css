@@ -1,35 +1,17 @@
-/* ======================================================= */
-/* === VARIÁVEIS DE COR GLOBAIS === */
-/* ======================================================= */
-:root {
-  --primary-color: #c9a455;   /* Dourado principal */
-  --secondary-color: #f7f3ed; /* Bege/creme para fundos */
-  --dark-color: #2c2a2a;      /* Cinza-escuro para textos e fundos */
-  --text-color: #4f4f4f;      /* Cor de texto principal */
-  --white: #fff;              /* Branco */
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* ======================================================= */
-/* === RESET E ESTILOS GLOBAIS === */
-/* ======================================================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-html {
-  /* Habilita a rolagem suave ao clicar em links de âncora (ex: #contato) */
-  scroll-behavior: smooth;
-}
+  body {
+    @apply text-text-color bg-white font-sans;
+  }
 
-body {
-  color: var(--text-color);
-  background-color: var(--white);
-}
-
-section {
-  /* Garante que os IDs das seções não fiquem escondidos atrás do header fixo */
-  scroll-margin-top: 80px; 
+  section {
+    scroll-margin-top: 80px;
+  }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Servicos.css';
 
 // Array com os dados para os cards de serviços oferecidos.
 const servicesList = [
@@ -31,15 +30,19 @@ const servicesList = [
  */
 function Servicos() {
   return (
-    <section id="servicos" className="services-section">
-      <h2>Tratamentos</h2>
-      <div className="services-grid">
+    <section id="servicos" className="py-16 px-[5%] bg-secondary text-center">
+      <h2 className="text-4xl mb-12 text-dark font-bold">Tratamentos</h2>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 max-w-[1200px] mx-auto">
         {/* Mapeia o array 'servicesList' para renderizar um card para cada serviço */}
         {servicesList.map((service, index) => (
-          <div className="service-card" key={index} data-aos="fade-up">
-            <div className="service-icon">{service.icon}</div>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
+          <div
+            className="bg-white p-8 rounded-[10px] shadow-[0_4px_15px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-2.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
+            key={index}
+            data-aos="fade-up"
+          >
+            <div className="text-5xl mb-4">{service.icon}</div>
+            <h3 className="text-2xl mb-2 text-primary font-bold">{service.title}</h3>
+            <p className="text-base leading-[1.6] text-text-color">{service.description}</p>
           </div>
         ))}
       </div>
