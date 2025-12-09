@@ -19,13 +19,14 @@ function App() {
   // Efeito para inicializar a biblioteca de animações (AOS) uma única vez.
   useEffect(() => {
     Aos.init({
-      duration: 1000, // Duração da animação em milissegundos
-      once: true,      // Animação acontece apenas uma vez por elemento
+      duration: 1000, 
+      once: true,      
     });
-  }, []); // O array vazio garante que este efeito rode apenas na montagem do componente.
+  }, []); 
 
   return (
-    <div className="App">
+    // O 'overflow-x-hidden' no app wrapper é a última linha de defesa.
+    <div className="overflow-x-hidden">
       <Header />
       <main>
         <Hero />

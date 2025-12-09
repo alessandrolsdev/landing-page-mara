@@ -1,17 +1,49 @@
+/* ======================================================= */
+/* === VARIÁVEIS DE COR GLOBAIS (PARA O TAILWIND USAR) === */
+/* ======================================================= */
+:root {
+  --primary-color: #c9a455;   /* Dourado principal */
+  --secondary-color: #f7f3ed; /* Bege/creme para fundos */
+  --dark-color: #2c2a2a;      /* Cinza-escuro para textos e fundos */
+  --text-color: #4f4f4f;      /* Cor de texto principal */
+  --white: #fff;              /* Branco */
+}
+
+/* ======================================================= */
+/* === DIRETIVAS DO TAILWIND E ESTILOS GLOBAIS === */
+/* ======================================================= */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+[data-aos] {
+    /* Garante que qualquer elemento que o AOS posicione fora do viewport seja cortado */
+    overflow-x: hidden !important; 
+}
 
 @layer base {
+  /* Reseta a box-sizing e estilos básicos */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
   html {
+    /* Habilita a rolagem suave para âncoras */
     scroll-behavior: smooth;
   }
 
   body {
+    /* Aplicação dos estilos globais do Tailwind */
     @apply text-text-color bg-white font-sans;
+    
+    /* CORREÇÃO CRÍTICA FINAL CONTRA O OVERFLOW HORIZONTAL (AOS & Carrossel) */
+    overflow-x: hidden; 
   }
 
   section {
+    /* Garante que as âncoras não fiquem escondidas atrás do header fixo */
     scroll-margin-top: 80px;
   }
 }
