@@ -1,5 +1,5 @@
 /* ======================================================= */
-/* === VARIÁVEIS DE COR GLOBAIS === */
+/* === VARIÁVEIS DE COR GLOBAIS (PARA O TAILWIND USAR) === */
 /* ======================================================= */
 :root {
   --primary-color: #c9a455;   /* Dourado principal */
@@ -10,26 +10,40 @@
 }
 
 /* ======================================================= */
-/* === RESET E ESTILOS GLOBAIS === */
+/* === DIRETIVAS DO TAILWIND E ESTILOS GLOBAIS === */
 /* ======================================================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+[data-aos] {
+    /* Garante que qualquer elemento que o AOS posicione fora do viewport seja cortado */
+    overflow-x: hidden !important; 
 }
 
-html {
-  /* Habilita a rolagem suave ao clicar em links de âncora (ex: #contato) */
-  scroll-behavior: smooth;
-}
+@layer base {
+  /* Reseta a box-sizing e estilos básicos */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  html {
+    /* Habilita a rolagem suave para âncoras */
+    scroll-behavior: smooth;
+  }
 
-body {
-  color: var(--text-color);
-  background-color: var(--white);
-}
+  body {
+    /* Aplicação dos estilos globais do Tailwind */
+    @apply text-text-color bg-white font-sans;
+    
+    /* CORREÇÃO CRÍTICA FINAL CONTRA O OVERFLOW HORIZONTAL (AOS & Carrossel) */
+    overflow-x: hidden; 
+  }
 
-section {
-  /* Garante que os IDs das seções não fiquem escondidos atrás do header fixo */
-  scroll-margin-top: 80px; 
+  section {
+    /* Garante que as âncoras não fiquem escondidas atrás do header fixo */
+    scroll-margin-top: 80px;
+  }
 }
