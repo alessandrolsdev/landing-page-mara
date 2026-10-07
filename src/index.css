@@ -1,49 +1,493 @@
-/* ======================================================= */
-/* === VARIÁVEIS DE COR GLOBAIS (PARA O TAILWIND USAR) === */
-/* ======================================================= */
-:root {
-  --primary-color: #c9a455;   /* Dourado principal */
-  --secondary-color: #f7f3ed; /* Bege/creme para fundos */
-  --dark-color: #2c2a2a;      /* Cinza-escuro para textos e fundos */
-  --text-color: #4f4f4f;      /* Cor de texto principal */
-  --white: #fff;              /* Branco */
-}
-
-/* ======================================================= */
-/* === DIRETIVAS DO TAILWIND E ESTILOS GLOBAIS === */
-/* ======================================================= */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-[data-aos] {
-    /* Garante que qualquer elemento que o AOS posicione fora do viewport seja cortado */
-    overflow-x: hidden !important; 
+:root {
+  font-family: Arial, sans-serif;
+  color: #38433d;
+  background: #f9f6ef;
+  font-synthesis: none;
 }
-
-@layer base {
-  /* Reseta a box-sizing e estilos básicos */
-  * {
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+a,
+button {
+  touch-action: manipulation;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+html {
+  scroll-behavior: smooth;
+}
+.mara-page {
+  --green: #384d42;
+  --cream: #f9f6ef;
+  --rose: #e5b8a4;
+  --sage: #dee5d9;
+}
+.shell {
+  width: min(1220px, 90%);
+  margin: auto;
+}
+.mara-page :focus-visible {
+  outline: 3px solid #975f40;
+  outline-offset: 5px;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  background: #384d42;
+  color: white;
+  padding: 15px;
+  z-index: 100;
+}
+.skip:focus {
+  top: 10px;
+}
+.clinic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d7d9cc;
+  padding: 24px 0;
+  gap: 25px;
+}
+.clinic-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font:
+    27px Georgia,
+    serif;
+}
+.clinic-brand img {
+  object-fit: contain;
+}
+.clinic-brand small {
+  display: block;
+  font: 9px Arial;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+.clinic-header nav {
+  display: flex;
+  gap: 32px;
+  font-size: 12px;
+}
+.menu-button {
+  display: none;
+}
+.clinic-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 65px;
+  padding: 70px 0 60px;
+  align-items: center;
+}
+.kicker {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin: 0 0 30px;
+}
+.mara-page h1,
+.mara-page h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -2.5px;
+  line-height: 1.1;
+  margin: 0 0 30px;
+}
+.mara-page h1 {
+  font-size: clamp(52px, 5.5vw, 80px);
+  position: relative;
+}
+.mara-page h2 {
+  font-size: clamp(37px, 4vw, 57px);
+}
+.mara-page em {
+  color: #776649;
+  font-weight: 400;
+}
+.clinic-copy > p:not(.kicker),
+.space-heading > p:not(.kicker),
+.contact-grid > div > p:not(.kicker) {
+  max-width: 380px;
+  font-size: 15px;
+  line-height: 1.85;
+  margin-bottom: 30px;
+}
+.smile {
+  width: 100px;
+  height: 85px;
+  position: absolute;
+  bottom: -3px;
+  right: 15%;
+  color: #ba7c62;
+  transform: rotate(-12deg);
+  animation: smile-in 0.9s both;
+}
+@keyframes smile-in {
+  from {
+    opacity: 0;
+    transform: rotate(-22deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-12deg) scale(1);
+  }
+}
+.clinic-button {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 24px;
+  background: var(--green);
+  border: 0;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.clinic-button:hover {
+  background: #26362d;
+}
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 35px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.hero-note > span {
+  font-size: 30px;
+  color: #a9684d;
+}
+.mara-portrait {
+  margin: 0;
+  position: relative;
+  padding: 15px;
+  background: #e7e3d7;
+  border-radius: 190px 190px 4px 4px;
+}
+.mara-portrait img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 180px 180px 2px 2px;
+}
+.mara-portrait figcaption {
+  background: var(--cream);
+  padding: 17px 24px;
+  position: absolute;
+  bottom: 35px;
+  left: -25px;
+  box-shadow: 0 8px 25px #38433d10;
+  font:
+    21px Georgia,
+    serif;
+}
+.mara-portrait small {
+  display: block;
+  font: 10px Arial;
+  margin-top: 6px;
+}
+.care-strip {
+  background: var(--sage);
+  padding: 25px 5%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-size: 12px;
+}
+.care-strip span:nth-child(even) {
+  color: #776649;
+}
+.about-clinic {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  padding: 100px 0;
+}
+.about-clinic p:not(.kicker) {
+  font-size: 16px;
+  line-height: 1.85;
+  max-width: 670px;
+  margin-bottom: 20px;
+}
+.text-link {
+  display: inline-block;
+  border-bottom: 1px solid #8f9b88;
+  padding-bottom: 8px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.treatments {
+  padding: 85px 0;
+  background: #eee7da;
+}
+.treatments > .shell {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+}
+.treatment-heading > p:last-child {
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 290px;
+}
+.treatment-list article {
+  position: relative;
+  border-top: 1px solid #b7b7a8;
+  padding: 25px 40px 25px 35px;
+}
+.treatment-list article > span {
+  position: absolute;
+  left: 0;
+  top: 32px;
+  font-size: 10px;
+}
+.treatment-list h3 {
+  font:
+    25px Georgia,
+    serif;
+  margin: 0 0 12px;
+}
+.treatment-list p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 340px;
+}
+.treatment-list a {
+  position: absolute;
+  right: 0;
+  top: 24px;
+  font-size: 24px;
+}
+.clinic-space {
+  padding: 100px 0;
+}
+.space-heading {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.space-heading h2 {
+  margin-bottom: 20px;
+}
+.space-heading > p:last-child {
+  grid-column: 2;
+}
+.space-photos {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 25px;
+  margin-top: 45px;
+  align-items: end;
+}
+.space-photos figure {
+  margin: 0;
+}
+.space-photos img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+.space-photos figure:nth-child(2) img {
+  height: 270px;
+  border-radius: 150px 150px 0 0;
+}
+.space-photos figure:last-child {
+  grid-column: 1/-1;
+  width: 70%;
+  margin-left: auto;
+  margin-top: 15px;
+}
+.space-photos figure:last-child img {
+  height: 360px;
+}
+.space-photos figcaption {
+  font-size: 11px;
+  margin-top: 12px;
+  color: #666d62;
+}
+.clinic-contact {
+  background: var(--sage);
+  padding: 90px 0;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+}
+.contact-smile {
+  display: block;
+  width: 130px;
+  color: #6e8063;
+  margin-top: 40px;
+}
+.contact-grid form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.contact-grid label {
+  font-size: 12px;
+  margin-top: 13px;
+}
+.contact-grid label span {
+  color: #606b59;
+}
+.contact-grid input,
+.contact-grid textarea {
+  width: 100%;
+  background: #f9f6efaa;
+  border: 1px solid #a7b29c;
+  padding: 14px;
+  border-radius: 0;
+  color: #38433d;
+}
+.contact-grid button {
+  margin-top: 15px;
+}
+.clinic-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 35px 0;
+}
+.clinic-footer > a:not(.clinic-brand),
+.clinic-footer > span {
+  font-size: 11px;
+}
+section {
+  scroll-margin-top: 20px;
+}
+@media (max-width: 760px) {
+  .clinic-header {
+    position: relative;
+  }
+  .clinic-brand {
+    font-size: 23px;
+  }
+  .menu-button {
+    display: block;
+    background: transparent;
+    border: 1px solid #a7b29c;
+    padding: 12px;
+    font-size: 12px;
+  }
+  .clinic-header nav {
+    display: none;
+  }
+  .clinic-header nav.open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--cream);
+    padding: 25px;
+    z-index: 20;
+    border: 1px solid #a7b29c;
+  }
+  .clinic-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 40px;
+  }
+  .mara-page h1 {
+    font-size: 54px;
+    letter-spacing: -2px;
+  }
+  .smile {
+    right: 3%;
+    width: 85px;
+  }
+  .mara-portrait {
+    margin-left: 20px;
+  }
+  .mara-portrait img {
+    height: 420px;
+  }
+  .care-strip {
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 11px;
+  }
+  .care-strip span:nth-child(even) {
+    display: none;
+  }
+  .about-clinic,
+  .treatments > .shell,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .about-clinic,
+  .clinic-space {
+    padding: 65px 0;
+  }
+  .treatments,
+  .clinic-contact {
+    padding: 65px 0;
+  }
+  .mara-page h2 {
+    letter-spacing: -1.5px;
+  }
+  .space-heading {
+    display: block;
+  }
+  .space-photos {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .space-photos figure:last-child {
+    grid-column: auto;
+    width: 100%;
     margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
   }
-  
+  .space-photos img,
+  .space-photos figure:nth-child(2) img,
+  .space-photos figure:last-child img {
+    height: 260px;
+  }
+  .contact-smile {
+    display: none;
+  }
+  .clinic-footer {
+    flex-direction: column;
+    align-items: start;
+  }
+  .contact-grid {
+    gap: 35px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
   html {
-    /* Habilita a rolagem suave para âncoras */
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
-
-  body {
-    /* Aplicação dos estilos globais do Tailwind */
-    @apply text-text-color bg-white font-sans;
-    
-    /* CORREÇÃO CRÍTICA FINAL CONTRA O OVERFLOW HORIZONTAL (AOS & Carrossel) */
-    overflow-x: hidden; 
-  }
-
-  section {
-    /* Garante que as âncoras não fiquem escondidas atrás do header fixo */
-    scroll-margin-top: 80px;
+  .mara-page *,
+  .mara-page *:before {
+    animation: none !important;
+    transition: none !important;
   }
 }
